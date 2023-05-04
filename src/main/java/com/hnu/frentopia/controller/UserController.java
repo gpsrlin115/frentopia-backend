@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 public class UserController {
@@ -31,8 +33,8 @@ public class UserController {
      */
 
     @PostMapping("/signUp")
-    public String signUp(User user) {
-        userService.createUser(user);
+    public String signUp(@ModelAttribute User user) {
+        userService.CreateUser(user);
         return "redirect:/";
     }
 }
